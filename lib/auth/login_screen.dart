@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:readr/book/home/home_screen.dart';
 import 'package:readr/utils/constants/images.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -52,8 +53,13 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                         width: 100,
                         child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text("Login"),
+                          onPressed: () {
+                            Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => HomeScreen(),)
+                            );
+                          },
+                          child: const Text("Login"),
                         ),
                       )
                     ],
