@@ -24,5 +24,17 @@ class OnboardingProvider extends ChangeNotifier {
     ),
   ];
 
+  int _currentIndex = 0;
+  int get currentIndex => _currentIndex;
+
   List<PageItem> get pages => List.unmodifiable(_pages);
+
+
+
+  void setCurrentIndex(int index) {
+    _currentIndex = index;
+    notifyListeners();
+  }
+
+
 }
