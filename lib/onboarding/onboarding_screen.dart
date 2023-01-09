@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:readr/auth/login_screen.dart';
 import 'package:readr/onboarding/page_item.dart';
 import 'package:readr/providers/onboarding_provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -53,7 +54,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: SizedBox(
                   width: 100,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(),
+                        ),
+                      );
+                    },
                     child: Consumer<OnboardingProvider>(
                       builder: (context, provider, child) {
                         return Text(provider.currentIndex == pages.length - 1

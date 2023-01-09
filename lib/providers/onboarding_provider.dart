@@ -17,7 +17,7 @@ class OnboardingProvider extends ChangeNotifier {
       imagePath: Images.kBookmark,
     ),
     PageItem(
-      title: "Off-line reading",
+      title: "Offline reading",
       description:
           "Download books to your device and read them even when you're not connected to the internet",
       imagePath: Images.kBookmark,
