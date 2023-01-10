@@ -11,4 +11,5 @@ class Images {
   static const String kOutliers = "images/outliers.jpg";
   static const String kSystemDesign = "images/system_design.jpg";
   static const String kZeroToOne = "images/zero_to_one.jpg";
+  static const String kProfile = "images/profile.jpg";
 }

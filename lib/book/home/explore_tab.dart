@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:readr/models/book.dart';
+import 'package:readr/providers/book_provider.dart';
 import 'package:readr/shared_widgets/book_item.dart';
 
 class ExploreTab extends StatelessWidget {
@@ -12,10 +14,16 @@ class ExploreTab extends StatelessWidget {
       child: ListView.separated(
         itemBuilder: (context, index) {
           final book = Book.books[index];
-          return buildBookItem(
-            context: context,
-            book: book,
-            onTap: () {},
+          return Consumer<BookProvider>(
+            builder: (context, provider, child) {
+              return buildBookItem(
+                context: context,
+                book: book,
+                onTap: () {
+                  provider.favoriteBook(book);
+                },
+              );
+            },
           );
         },
         separatorBuilder: (context, index) {
