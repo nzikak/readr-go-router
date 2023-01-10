@@ -27,7 +27,7 @@ class BookmarksTab extends StatelessWidget {
                 return buildBookItem(
                   context: context,
                   book: book,
-                  onTap: () {
+                  onFav: () {
                     bookProvider.favoriteBook(book);
                   },
                 );
