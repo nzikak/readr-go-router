@@ -57,10 +57,7 @@ class LoginScreen extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             context.read<UserProvider>().setLoggedIn();
-                            Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),)
-                            );
+
                           },
                           child: const Text("Login"),
                         ),

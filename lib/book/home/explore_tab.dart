@@ -26,9 +26,7 @@ class ExploreTab extends StatelessWidget {
                         provider.favoriteBook(book);
                       },
                       onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => BookDetail(book: book),
-                        ));
+
                       });
                 },
               );

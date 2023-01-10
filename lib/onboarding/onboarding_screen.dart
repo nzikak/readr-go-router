@@ -57,11 +57,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   child: ElevatedButton(
                     onPressed: () {
                       context.read<UserProvider>().completeOnboarding();
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
-                        ),
-                      );
                     },
                     child: Consumer<OnboardingProvider>(
                       builder: (context, provider, child) {
