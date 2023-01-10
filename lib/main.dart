@@ -3,14 +3,25 @@ import 'package:provider/provider.dart';
 import 'package:readr/providers/book_provider.dart';
 import 'package:readr/providers/onboarding_provider.dart';
 import 'package:readr/providers/tab_provider.dart';
+import 'package:readr/providers/user_provider.dart';
 import 'package:readr/splash/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  final userProvider = UserProvider();
+  userProvider.initialize();
+  runApp(MyApp(
+    userProvider: userProvider,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final UserProvider userProvider;
+
+  const MyApp({
+    super.key,
+    required this.userProvider,
+  });
 
   // This widget is the root of your application.
   @override
@@ -26,6 +37,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_) => BookProvider(),
           ),
+          ChangeNotifierProvider(create: (_) => userProvider),
         ],
         child: MaterialApp(
           title: 'GoRouter Demo',

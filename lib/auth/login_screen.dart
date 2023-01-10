@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:readr/book/home/home_screen.dart';
+import 'package:readr/providers/user_provider.dart';
 import 'package:readr/utils/constants/images.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -54,6 +56,7 @@ class LoginScreen extends StatelessWidget {
                         width: 100,
                         child: ElevatedButton(
                           onPressed: () {
+                            context.read<UserProvider>().setLoggedIn();
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                   builder: (context) => HomeScreen(),)

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:readr/providers/user_provider.dart';
 import 'package:readr/utils/constants/images.dart';
 
 class ProfileTab extends StatelessWidget {
@@ -6,12 +8,12 @@ class ProfileTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildProfileCard();
+    return _buildProfileCard(context);
   }
 
-  Widget _buildProfileCard() => Container(
-margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-    child: Card(
+  Widget _buildProfileCard(BuildContext context) => Container(
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        child: Card(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
@@ -24,25 +26,33 @@ margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     height: 120,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(Images.kProfile), fit: BoxFit.cover),
+                          image: AssetImage(Images.kProfile),
+                          fit: BoxFit.cover),
                       shape: BoxShape.circle,
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const Text("John Doe",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),),
+                  const Text(
+                    "John Doe",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   const SizedBox(height: 16),
                   SizedBox(
-                      width: 100,
-                      child: ElevatedButton(
-                          onPressed: () {}, child: const Text('Logout')))
+                    width: 100,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        context.read<UserProvider>().logoutUser();
+                      },
+                      child: const Text('Logout'),
+                    ),
+                  )
                 ],
               ),
             ),
           ),
         ),
-  );
+      );
 }

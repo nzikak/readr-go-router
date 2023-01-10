@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:readr/auth/login_screen.dart';
 import 'package:readr/onboarding/page_item.dart';
 import 'package:readr/providers/onboarding_provider.dart';
+import 'package:readr/providers/user_provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -55,6 +56,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   width: 100,
                   child: ElevatedButton(
                     onPressed: () {
+                      context.read<UserProvider>().completeOnboarding();
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => LoginScreen(),
