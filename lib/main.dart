@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:readr/providers/book_provider.dart';
 import 'package:readr/providers/onboarding_provider.dart';
 import 'package:readr/providers/tab_provider.dart';
 import 'package:readr/splash/splash_screen.dart';
@@ -22,9 +23,12 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_) => TabProvider(),
           ),
+          ChangeNotifierProvider(
+            create: (_) => BookProvider(),
+          ),
         ],
         child: MaterialApp(
-          title: 'Flutter Demo',
+          title: 'GoRouter Demo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primarySwatch: Colors.blue,
