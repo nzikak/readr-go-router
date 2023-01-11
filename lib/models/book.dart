@@ -1,4 +1,3 @@
-import 'package:readr/utils/constants/images.dart';
 
 class Book {
   final int id;

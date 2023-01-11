@@ -5,7 +5,6 @@ import 'package:readr/book/home/home_screen.dart';
 import 'package:readr/error/error_screen.dart';
 import 'package:readr/models/book.dart';
 import 'package:readr/onboarding/onboarding_screen.dart';
-import 'package:readr/providers/book_provider.dart';
 import 'package:readr/providers/user_provider.dart';
 import 'package:readr/splash/splash_screen.dart';
 
@@ -56,7 +55,7 @@ class AppRouter {
         routes: [
           GoRoute(
             path: 'book-detail',
-            name: 'book-detai',
+            name: 'book-detail',
             builder: (context, state) {
               final book = state.extra as Book;
               return BookDetail(book: book);

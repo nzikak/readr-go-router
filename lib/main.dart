@@ -5,11 +5,12 @@ import 'package:readr/providers/onboarding_provider.dart';
 import 'package:readr/providers/tab_provider.dart';
 import 'package:readr/providers/user_provider.dart';
 import 'package:readr/routing/app_router.dart';
-import 'package:readr/splash/splash_screen.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   final userProvider = UserProvider();
+  setPathUrlStrategy();
   userProvider.initialize();
   runApp(MyApp(
     userProvider: userProvider,

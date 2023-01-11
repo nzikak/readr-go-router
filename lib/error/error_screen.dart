@@ -27,6 +27,7 @@ class ErrorScreen extends StatelessWidget {
               width: 150,
               child: ElevatedButton(
                 onPressed: () {
+                  context.goNamed('home');
                 },
                 child: const Text('Go to home'),
               ),

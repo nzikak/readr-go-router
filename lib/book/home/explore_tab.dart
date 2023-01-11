@@ -25,8 +25,8 @@ class ExploreTab extends StatelessWidget {
                       provider.favoriteBook(book);
                     },
                     onTap: () {
-                      context.go(
-                        '/book-detail',
+                      context.goNamed(
+                        'book-detail',
                         extra: book,
                       );
                     },
