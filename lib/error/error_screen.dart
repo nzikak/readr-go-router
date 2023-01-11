@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class ErrorScreen extends StatelessWidget {
-  final GoRouterState errorState;
+  final String error;
 
   const ErrorScreen({
     Key? key,
-    required this.errorState,
+    required this.error,
   }) : super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class ErrorScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              errorState.error.toString(),
+              error,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 18),
             ),

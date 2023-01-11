@@ -64,6 +64,8 @@ class AppRouter {
         ],
       ),
     ],
-    errorBuilder: (context, state) => ErrorScreen(errorState: state),
+    errorBuilder: (context, state) => ErrorScreen(
+      error: state.toString(),
+    ),
   );
 }
