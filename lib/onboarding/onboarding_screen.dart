@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:readr/auth/login_screen.dart';
 import 'package:readr/onboarding/page_item.dart';
 import 'package:readr/providers/onboarding_provider.dart';
 import 'package:readr/providers/user_provider.dart';
