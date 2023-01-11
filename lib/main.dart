@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Accesses the GoRouter object and stores it in the router variable
-    final router = AppRouter().router;
+    final router = AppRouter(userProvider).router;
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
