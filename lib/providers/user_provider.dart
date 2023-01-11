@@ -34,5 +34,6 @@ class UserProvider extends ChangeNotifier {
     _isUserLoggedIn = false;
     await _preferences.setUserLoggedIn(false);
     await _preferences.setUserOnboarded(false);
+    notifyListeners();
   }
 }

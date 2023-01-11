@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:readr/book/book_detail/book_detail.dart';
-import 'package:readr/models/book.dart';
 import 'package:readr/providers/book_provider.dart';
 import 'package:readr/shared_widgets/book_item.dart';
 
@@ -20,14 +19,18 @@ class ExploreTab extends StatelessWidget {
               return Consumer<BookProvider>(
                 builder: (context, provider, child) {
                   return buildBookItem(
-                      context: context,
-                      book: book,
-                      onFav: () {
-                        provider.favoriteBook(book);
-                      },
-                      onTap: () {
-
-                      });
+                    context: context,
+                    book: book,
+                    onFav: () {
+                      provider.favoriteBook(book);
+                    },
+                    onTap: () {
+                      context.go(
+                        '/book-detail',
+                        extra: book,
+                      );
+                    },
+                  );
                 },
               );
             },
